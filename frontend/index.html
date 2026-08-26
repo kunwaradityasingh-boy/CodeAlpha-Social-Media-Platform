@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>CodeAlpha Social Media Platform</title>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- NAVBAR -->
+    <nav class="navbar">
+      <div class="logo">CodeAlpha Social</div>
+
+      <div class="nav-links">
+        <button onclick="showSection('home')">Home</button>
+        <button onclick="showSection('profile')">Profile</button>
+        <button onclick="logout()">Logout</button>
+      </div>
+    </nav>
+
+    <!-- LOGIN SECTION -->
+    <section id="loginSection" class="auth-section">
+      <div class="auth-card">
+        <h1>Welcome Back</h1>
+        <p>Login to your social media account</p>
+
+        <input type="email" id="loginEmail" placeholder="Email" />
+
+        <input type="password" id="loginPassword" placeholder="Password" />
+
+        <button onclick="loginUser()" class="primary-btn">Login</button>
+
+        <p class="switch-text">
+          Don't have an account?
+          <button onclick="showRegister()" class="text-btn">Register</button>
+        </p>
+      </div>
+    </section>
+
+    <!-- REGISTER SECTION -->
+    <section id="registerSection" class="auth-section hidden">
+      <div class="auth-card">
+        <h1>Create Account</h1>
+        <p>Join CodeAlpha Social Media</p>
+
+        <input type="text" id="registerName" placeholder="Full Name" />
+
+        <input type="email" id="registerEmail" placeholder="Email" />
+
+        <input type="password" id="registerPassword" placeholder="Password" />
+
+        <button onclick="registerUser()" class="primary-btn">Register</button>
+
+        <p class="switch-text">
+          Already have an account?
+          <button onclick="showLogin()" class="text-btn">Login</button>
+        </p>
+      </div>
+    </section>
+
+    <!-- HOME / FEED -->
+    <main id="homeSection" class="main-content hidden">
+      <!-- CREATE POST -->
+      <section class="create-post">
+        <h2>Create a Post</h2>
+
+        <textarea
+          id="postContent"
+          placeholder="What's on your mind?"
+        ></textarea>
+
+        <button onclick="createPost()" class="primary-btn">Post</button>
+      </section>
+
+      <!-- POSTS -->
+      <section class="feed">
+        <h2>Latest Posts</h2>
+
+        <div id="postsContainer">
+          <!-- Posts will be loaded here -->
+        </div>
+      </section>
+    </main>
+
+    <!-- PROFILE -->
+    <section id="profileSection" class="profile-section hidden">
+      <div class="profile-card">
+        <div class="profile-avatar">👤</div>
+
+        <h2 id="profileName">Test User</h2>
+
+        <p id="profileEmail">testuser@gmail.com</p>
+
+        <div class="profile-stats">
+          <div>
+            <strong id="postCount">0</strong>
+            <span>Posts</span>
+          </div>
+
+          <div>
+            <strong id="followerCount">0</strong>
+            <span>Followers</span>
+          </div>
+
+          <div>
+            <strong id="followingCount">0</strong>
+            <span>Following</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- JAVASCRIPT -->
+    <script src="script.js"></script>
+  </body>
+</html>
